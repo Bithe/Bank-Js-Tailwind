@@ -8,6 +8,7 @@ console.log(email.value);
 
 if(userEmail == 'admin@gmail.com' && userPassword == 'secret'){
     window.location.href = 'banking.html';
+    this.getElementsByClassName
 }
 
 });
