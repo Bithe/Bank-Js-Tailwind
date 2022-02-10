@@ -8,7 +8,5 @@ document.getElementById('login').addEventListener("click", function() {
 
     if (userEmail == 'admin@gmail.com' && userPassword == 'secret') {
         window.location.href = 'banking.html';
-        this.getElementsByClassName;
     }
-
 });
