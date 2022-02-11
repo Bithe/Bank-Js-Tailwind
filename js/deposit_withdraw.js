@@ -1,22 +1,31 @@
 //handle deposit button event
-
 document.getElementById('deposit-submit').addEventListener("click", function() {
     //deposited amount
     const depositAmount = document.getElementById('deposit-amount');
     const depositText = depositAmount.value;
     const deposit = parseFloat(depositText);
-
     console.log(deposit);
     //clear the deposit input field
     depositAmount.value = "";
     //deposit show
     const depositTotalAmount = document.getElementById('total-deposit-amount');
     const previousDepositTotalAmountText = depositTotalAmount.innerText;
-
+    //
     const previousDepositTotalAmount = parseFloat(previousDepositTotalAmountText);
     const newDepositTotalAmount = previousDepositTotalAmount + deposit;
     depositTotalAmount.innerText = newDepositTotalAmount;
-
+    //Balance
+    const balance = document.getElementById('balance');
+    const balanceText = balance.innerText;
+    let previousBalanceTotal = parseFloat(balanceText);
+    console.log(previousBalanceTotal);
+    // if (!previousBalanceTotal) {
+    //     previousBalanceTotal = 0;
+    // }
+    const newBalanceTotal = previousBalanceTotal + deposit;
+    balance.innerText = newBalanceTotal;
+    console.log(newBalanceTotal);
+    deposit.value = "";
 });
 
 //Withdraw event handler
@@ -31,8 +40,6 @@ document.getElementById('withdraw-submit').addEventListener("click", function() 
     const previousTotalWithdrawText = totalWithdrawAmount.innerText;
     const previousTotalWithdraw = parseFloat(previousTotalWithdrawText);
     const newTotalWithdraw = previousTotalWithdraw + withdraw;
-
     // show withdraw amount in withdraw
     totalWithdrawAmount.innerText = newTotalWithdraw;
-
 });
