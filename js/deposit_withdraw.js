@@ -34,7 +34,6 @@ document.getElementById('withdraw-submit').addEventListener("click", function() 
     const withdrawText = withdrawAmount.value;
     const withdraw = parseFloat(withdrawText);
     console.log(withdraw);
-    withdrawAmount.value = "";
     const totalWithdrawAmount = document.getElementById('total-withdraw-amount');
     //
     const previousTotalWithdrawText = totalWithdrawAmount.innerText;
@@ -42,4 +41,12 @@ document.getElementById('withdraw-submit').addEventListener("click", function() 
     const newTotalWithdraw = previousTotalWithdraw + withdraw;
     // show withdraw amount in withdraw
     totalWithdrawAmount.innerText = newTotalWithdraw;
+    withdrawAmount.value = "";
+
+    //Update Balance
+    const balanceTotal = document.getElementById('balance');
+    const previousBalanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(previousBalanceTotalText);
+    const newBalanceTotal = previousBalanceTotal - withdraw;
+    balanceTotal.innerText = newBalanceTotal;
 });
